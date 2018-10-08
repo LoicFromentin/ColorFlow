@@ -4,9 +4,9 @@
 
 function Palette (niveau, plat) {
 	
-	this.actMax = 10;
-	this.tabCouleurs = new Array (0,1,2,3,4);
-	this.plateau = plat;
+	this.actMax = 10; 							// Nombre d'actions max avant de perdre
+	this.tabCouleurs = new Array (0,1,2,3,4);	// Tableau de couleurs presentes sur le plateau
+	this.plateau = plat;						// Plateau sur lequel on va appliquer les changement de couleur
 
 	// Renvoie une couleur prise aleatoirement dans le tableau
 	// couleur : couleur des cases du joueur 
@@ -47,6 +47,7 @@ function Plateau (palette, size) {
 	this.palette = palette;
 	this.taille = size;
 
+	// VOID : Cree le plateau : matrices de cases de couleur aleatoires
 	this.setUp = function () {
 		var tabY = new Array ();						// Cree tableau des Y
 		for (var y=0 ; y<this.taille ; y++) { 			// Boucle les cases a creer en Y
@@ -80,6 +81,7 @@ function Plateau (palette, size) {
 		console.log(this.isWin());
 	}
 
+	// Return : true si victoire, false sinon
 	this.isWin = function () {
 		// Passe a false a la premiere cases rencontree non controllee par le joueur
 		var win = true;		
@@ -99,7 +101,7 @@ function Plateau (palette, size) {
 
 	}
 
-	// Renvoie un plateau copie
+	// Renvoie un plateau copie du plateau courant
 	this.clone = function () {
 		var c = new Plateau (this.palette, this.taille);
 		c.setUp();
@@ -111,6 +113,7 @@ function Plateau (palette, size) {
 		return c;
 	}
 
+	// Renvoie une string presentant les attributs du plateau
 	this.toString = function () {
 		var text = "\n";
 		for (var y=0 ; y<this.taille ; y++) { 			// Boucle les cases en Y
@@ -133,20 +136,22 @@ function Plateau (palette, size) {
 
 function Case (couleur,controlee,posX,posY) {
 
-	this.color = couleur;
-	this.control = controlee;
-	this.tabPos = new Array (posY, posX);
+	this.color = couleur;					// Couleur de la case
+	this.control = controlee;				// True si controlee par joueur, false sinon
+	this.tabPos = new Array (posY, posX);	// Position y et x de la case dans le plateau
 
+	// VOID : Modifie la couleur de la case
 	this.setColor = function (color) {
 		this.color = color;
 
 	}
 
-	// Renvoie une copie de la case
+	// Renvoie une copie de la case courante
 	this.clone = function () {
 		return new Case(this.color, this.control, this.tabPos[1], this.tabPos[0]);
 	}
 	
+	// Renvoie une string presentant les attributs de la case
 	this.toString = function () {
 		console.log("Case ["+this.tabPos[0]+","+this.tabPos[1]+"] : Couleur="+this.color+"; Contrôlée="+this.control);
 	}
