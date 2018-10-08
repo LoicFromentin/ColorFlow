@@ -1,4 +1,15 @@
 // ----------------------------------------------------------------------------------------------------------------------------------------------
+// ---------------------------- CHEMIN VICTOIRE -------------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------------------------------------------------------
+	// Graph : Sommet = situation plateau ; Arete = action (changement couleur)
+	// graph = tableau : [plateauCourant, lastAction]
+	// Calcul meilleur chemin : tableau de graphs, prendre le graph/tableau le moins grand : taille tab = nb coups pour win
+function actPossibleToWin (plat, pal) {
+	this.plateau = plat;
+	this.palette = pal;
+}
+
+// ----------------------------------------------------------------------------------------------------------------------------------------------
 // ---------------------------- OBJET PALETTE ---------------------------------------------------------------------------------------------------
 // ----------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -42,10 +53,10 @@ function Palette (niveau, plat) {
 
 function Plateau (palette, size) {
 	
-	// Case[][] tabCases : ableau contenant les cases colorees
-	this.tabCases = new Array ();
-	this.palette = palette;
-	this.taille = size;
+	this.tabCases = new Array ();		// Case[][] tabCases : ableau contenant les cases colorees
+	this.tabCheminWin = new Array ();	// [plateau][actionPrecedente] : [max][max]=situation win
+	this.palette = palette;				// Palette de couleurs presentes sur le plateau
+	this.taille = size;					// Taille d'un cote du plateau
 
 	// VOID : Cree le plateau : matrices de cases de couleur aleatoires
 	this.setUp = function () {
@@ -100,6 +111,8 @@ function Plateau (palette, size) {
 
 
 	}
+
+
 
 	// Renvoie un plateau copie du plateau courant
 	this.clone = function () {
