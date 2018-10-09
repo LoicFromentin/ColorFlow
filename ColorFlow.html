@@ -19,25 +19,24 @@
 <body>
 
 <header>
-    <img id="titre" src="./img/titre.png">
+    <img id="titre" class="shadow-lg" src="./img/titre.png">
 </header>
 
 
 <main role="main">
 
-    <div id="contenu">
+    <div id="contenu" class="container">
 
-        <div id="entete">
-            <!--
-            <table>
-                <th><img id="replay" src="./img/arrow2.png"></th>
-                <th><h3 id="cmpt_actions">0/10</h3></th>
-                <th><img id="lvl" src="./img/manette2.png"></th>
-            </table>
-        -->
-            <img id="replay" src="./img/arrow2.png">
-            <h3 id="cmpt_actions">0/10</h3>
-            <img id="lvl" src="./img/manette2.png">
+        <div id="entete" class="row">
+            <div class="col">
+                <img id="replay" class="col" src="./img/arrow2.png">
+            </div>
+            <div class="col" id="compteur">
+                <h3 id="cmpt_actions" class="col">0/10</h3>
+            </div>
+            <div class="col">
+                <img id="lvl" src="./img/manette2.png" class="col">
+            </div>
         </div>
 
         <div id="game">
@@ -52,7 +51,7 @@
 
 
             <div id="divPlateau">
-                <img class="image" id="plateau" src="./img/plateau.png">
+                
             </div>
         </div>
 
