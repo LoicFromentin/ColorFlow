@@ -14,13 +14,14 @@ h3 {
     font-size: 40px !important;
     color: #000000 !important;
 }
-#couleur1,#couleur2,#couleur3,#couleur4,#couleur5,#couleur6 {
+#carreCouleur{
     width:5em;
     height:5em;
     border: none;
     border-radius: 4px;
-    margin:0.2em;
+    margin:0.5em;
 }
+
 #couleur1 {
     background-color: red;
     border:2px solid darkred;
@@ -89,15 +90,9 @@ h3 {
 #game {
     display: flex;
     flex-direction: row;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
     width: 50%;
-    margin: auto;
-    margin-top: 12%;
-    margin-bottom: 3%;
+    margin-right: auto;
+    margin-left:auto;
 }
 
 #divPalette {
@@ -136,7 +131,6 @@ h3 {
     width: 50%;
     height: 100%;
 }
-
 
 
 
