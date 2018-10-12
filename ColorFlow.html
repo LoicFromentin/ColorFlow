@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" href="img/manette2.png">
+    <link rel="icon" href="img/icon.jpg">
 
     <title>Color Flow : The Game !</title>
 
@@ -19,70 +19,39 @@
 <body>
 
 <header>
-<!--
-    <nav class="navbar fixed-top navbar-expand-lg rounded-bottom">
-        <a class="logobar" href="" target="_blank"><img src="img/logo_epsi.svg" width="60px"></a>
-        <button class="navbar-toggler bg-light" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav menudroite" id="menu">
-                <li class="nav-item active">
-                    <a class="nav-link text-light bg-dark rounded" href="#">Accueil</a>
-                </li>
-                <li class="nav-item dropleft">
-                    <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Vous êtes ?
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#" onclick="changeMenu(this.innerHTML);">Etudiant</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#" onclick="changeMenu(this.innerHTML);">Entreprise<a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#" onclick="changeMenu(this.innerHTML);">Visiteur</a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </nav>
--->
-
-        <img id="titre" src="./img/titre.png">
-
+    <img id="titre" class="shadow-lg" src="./img/titre.png">
 </header>
 
 
 <main role="main">
 
-    <div id="contenu">
+    <div id="contenu" class="container">
 
-        <div id="entete">
-            <!--
-            <table>
-                <th><img id="replay" src="./img/arrow2.png"></th>
-                <th><h3 id="cmpt_actions">0/10</h3></th>
-                <th><img id="lvl" src="./img/manette2.png"></th>
-            </table>
-        -->
-            <img id="replay" src="./img/arrow2.png">
-            <h3 id="cmpt_actions">0/10</h3>
-            <img id="lvl" src="./img/manette2.png">
+        <div id="entete" class="row">
+            <div class="col">
+                <img id="replay" class="col" src="./img/arrow2.png">
+            </div>
+            <div class="col" id="compteur">
+                <h3 id="cmpt_actions" class="col">0/10</h3>
+            </div>
+            <div class="col">
+                <img id="lvl" src="./img/manette2.png" class="col">
+            </div>
         </div>
 
         <div id="game">
             <div id="divPalette">
-                <button class="carreCouleur" id="couleur1">Red</button>
-                <button class="carreCouleur" id="couleur2">Blue</button>
-                <button class="carreCouleur" id="couleur3">Orange</button>
-                <button class="carreCouleur" id="couleur4">Yellow</button>
-                <button class="carreCouleur" id="couleur5">Green</button>
-                <button class="carreCouleur" id="couleur6">Purple</button>
+                <button class="carreCouleur shadow" id="couleur1"></button>
+                <button class="carreCouleur shadow" id="couleur2"></button>
+                <button class="carreCouleur shadow" id="couleur3"></button>
+                <button class="carreCouleur shadow" id="couleur4"></button>
+                <button class="carreCouleur shadow" id="couleur5"></button>
+                <button class="carreCouleur shadow" id="couleur6"></button>
             </div>
 
 
             <div id="divPlateau">
-                <img class="image" id="plateau" src="./img/plateau.png">
+                
             </div>
         </div>
 
@@ -90,12 +59,7 @@
             <input id="start" class="button" type="button" value="Jouer" style="visibility: hidden;">
         </div>
 
-    </div><!-- /.container -->
-
-    <!-- FOOTER 
-    <footer class="container">
-        <p class="fixed-bottom" style="text-align: right; margin-right:10px;">&copy; 2018 EPSI</p>
-    </footer>-->
+    </div>
 </main>
 
 <script src="./js/script.js"></script>
