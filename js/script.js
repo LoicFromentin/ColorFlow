@@ -64,7 +64,8 @@ function Palette (niveau,actMax) {
 	// Renvoie une couleur prise aleatoirement dans le tableau
 	// couleur : couleur des cases du joueur 
 	// bonus : % bonus d'avoir la meme couleur
-	this.randomColor = function (couleur, bonus) {
+	this.randomColor = function () {
+
 		if (couleur!=null && bonus!=null) {
 			// Math.random() : entre 0 et 1
 		}
@@ -264,6 +265,7 @@ function Case (couleur,controlee,posX,posY) {
 
 // Utilisee pour generer une couleur aleatoire
 function getRandomInt(max) {return Math.floor(Math.random() * Math.floor(max));}
+function getRandomInt2(max,bonus) {return Math.floor((Math.random()+bonus) * Math.floor(max));}
 
 // ------------------------- Creation objets / variables
 var jouer = true; 				// false si le joueur veut arreter de jouer
